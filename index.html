@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classifieds - Buy & Sell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Classifieds - Buy & Sell Used Products</h1>
+        <nav>
+            <ul>
+                <li><a href="#buy">Buy</a></li>
+                <li><a href="#sell">Sell</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="buy">
+        <h2>Available Products</h2>
+        <div id="product-list">
+            <!-- Products will be rendered here by JavaScript -->
+        </div>
+    </section>
+
+    <section id="sell">
+        <h2>Sell Your Product</h2>
+        <form id="sell-form">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" required>
+
+            <label for="productPrice">Price:</label>
+            <input type="number" id="productPrice" required>
+
+            <label for="productDescription">Description:</label>
+            <textarea id="productDescription" required></textarea>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
