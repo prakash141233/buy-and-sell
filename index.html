@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Classifieds - Buy & Sell Used Products</title>
+    <title>Amazon-like Buy & Sell Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Header -->
     <header>
-        <h1>Classifieds - Buy & Sell Used Products</h1>
+        <h1>Online Marketplace - Buy & Sell Products</h1>
         <nav>
             <ul>
-                <li><a href="#buy">Buy</a></li>
-                <li><a href="#sell">Sell</a></li>
+                <li><a href="#buy">Buy Products</a></li>
+                <li><a href="#sell">Sell Products</a></li>
             </ul>
         </nav>
     </header>
@@ -23,25 +22,29 @@
     <!-- Buy Section -->
     <section id="buy">
         <h2>Available Products</h2>
-        <!-- Category filter -->
-        <label for="category-filter">Filter by Category:</label>
-        <select id="category-filter">
-            <option value="all">All Categories</option>
-            <option value="electronics">Electronics</option>
-            <option value="furniture">Furniture</option>
-            <option value="books">Books</option>
-            <option value="clothing">Clothing</option>
-        </select>
-
-        <div id="product-list">
-            <!-- Products will be dynamically rendered by JavaScript -->
+        <div>
+            <label for="category-filter">Filter by Category:</label>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="furniture">Furniture</option>
+            </select>
         </div>
+        
+        <div id="product-list"></div>
     </section>
 
     <!-- Sell Section -->
     <section id="sell">
         <h2>Sell Your Product</h2>
-        <form id="sell-form" enctype="multipart/form-data">
+        <form id="sell-form">
+            <label for="sellerName">Seller Name:</label>
+            <input type="text" id="sellerName" required>
+
+            <label for="sellerPhone">Phone Number:</label>
+            <input type="text" id="sellerPhone" required>
+
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" required>
 
@@ -54,9 +57,8 @@
             <label for="productCategory">Category:</label>
             <select id="productCategory" required>
                 <option value="electronics">Electronics</option>
-                <option value="furniture">Furniture</option>
-                <option value="books">Books</option>
                 <option value="clothing">Clothing</option>
+                <option value="furniture">Furniture</option>
             </select>
 
             <label for="productImage">Product Image:</label>
@@ -68,11 +70,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Classifieds - All rights reserved.</p>
+        <p>&copy; 2024 Marketplace - All rights reserved.</p>
     </footer>
 
     <!-- Scripts -->
     <script src="app.js"></script>
 </body>
-
 </html>
