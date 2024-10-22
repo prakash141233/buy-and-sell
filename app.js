@@ -6,45 +6,37 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sample data of available products
     let products = [
         {
-            name: 'Laptop',
-            price: 400,
-            description: 'A used but well-maintained laptop',
-            image: 'images/laptop.jpg',
-            category: 'electronics' // Category for filtering
+            name: 'Smartphone',
+            price: 500,
+            description: 'A brand new smartphone with all features.',
+            image: '"C:\Users\IT_USER5\Pictures\iphone 14.jpeg"',
+            category: 'electronics',
+            seller: {
+                name: 'Alice Johnson',
+                phone: '123-456-7890'
+            }
         },
         {
-            name: 'Phone',
-            price: 200,
-            description: 'A second-hand smartphone in good condition',
-            image: 'images/phone.jpg',
-            category: 'electronics'
-        },
-        {
-            name: 'Sofa',
-            price: 150,
-            description: 'A comfy 3-seater sofa in great condition',
-            image: 'images/sofa.jpg',
-            category: 'furniture'
-        },
-        {
-            name: 'Book',
-            price: 20,
-            description: 'A used book in good condition',
-            image: 'images/book.jpg',
-            category: 'books'
+            name: 'Leather Jacket',
+            price: 100,
+            description: 'Stylish leather jacket, great condition.',
+            image: "C:\Users\IT_USER5\Pictures\v.jfif",
+            category: 'clothing',
+            seller: {
+                name: 'Bob Smith',
+                phone: '987-654-3210'
+            }
         }
     ];
 
-    // Function to render products based on the filter category
+    // Function to render products based on category filter
     function renderProducts() {
         const selectedCategory = categoryFilter.value;
-        productList.innerHTML = ''; // Clear the product list
+        productList.innerHTML = '';
 
-        // Filter the products based on the selected category
         const filteredProducts = selectedCategory === 'all' ?
             products : products.filter(product => product.category === selectedCategory);
 
-        // Render the filtered products
         filteredProducts.forEach((product, index) => {
             const productElement = document.createElement('div');
             productElement.classList.add('product');
@@ -53,10 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h3>${product.name}</h3>
                 <p class="price">$${product.price}</p>
                 <p>${product.description}</p>
+                <p><strong>Seller:</strong> ${product.seller.name} | <strong>Phone:</strong> ${product.seller.phone}</p>
                 <button class="buy-btn" data-index="${index}">Buy</button>
-                <button class="delete-btn" data-index="${index}">Delete</button>
             `;
-
             productList.appendChild(productElement);
         });
     }
@@ -65,34 +56,39 @@ document.addEventListener('DOMContentLoaded', function () {
     sellForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Get values from the form
+        const sellerName = document.getElementById('sellerName').value;
+        const sellerPhone = document.getElementById('sellerPhone').value;
         const productName = document.getElementById('productName').value;
         const productPrice = document.getElementById('productPrice').value;
         const productDescription = document.getElementById('productDescription').value;
         const productCategory = document.getElementById('productCategory').value;
         const productImage = document.getElementById('productImage').files[0];
 
-        // Check if an image is uploaded
+        // Validate image file
         if (!productImage) {
-            alert('Please upload an image.');
+            alert('Please upload an image for the product.');
             return;
         }
 
-        const imageUrl = URL.createObjectURL(productImage);  // Create a URL for the uploaded image
+        const imageUrl = URL.createObjectURL(productImage);  // Generate a URL for the image
 
-        // Add the new product to the list
+        // Add the new product to the products array
         products.push({
             name: productName,
             price: productPrice,
             description: productDescription,
             category: productCategory,
-            image: imageUrl // Use the image URL from the input
+            image: imageUrl, // Use the uploaded image URL
+            seller: {
+                name: sellerName,
+                phone: sellerPhone
+            }
         });
 
         // Reset the form after submission
         sellForm.reset();
 
-        // Re-render the product list
+        // Re-render the product list with the newly added product
         renderProducts();
     });
 
@@ -100,25 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
     productList.addEventListener('click', function (event) {
         if (event.target.classList.contains('buy-btn')) {
             const productIndex = event.target.getAttribute('data-index');
-            const boughtProduct = products.splice(productIndex, 1)[0];  // Remove product from the list
+            const boughtProduct = products.splice(productIndex, 1)[0];  // Remove the product from the list
 
             // Re-render the product list
             renderProducts();
 
-            alert(`You have bought the ${boughtProduct.name} for $${boughtProduct.price}!`);
-        }
-    });
-
-    // Handle deleting a product
-    productList.addEventListener('click', function (event) {
-        if (event.target.classList.contains('delete-btn')) {
-            const productIndex = event.target.getAttribute('data-index');
-            products.splice(productIndex, 1);  // Remove the product
-
-            // Re-render the updated product list
-            renderProducts();
-
-            alert("Product deleted successfully!");
+            alert(`You have successfully bought the ${boughtProduct.name} for $${boughtProduct.price}!`);
         }
     });
 
