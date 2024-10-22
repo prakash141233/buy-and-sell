@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Classifieds - Buy & Sell</title>
+    <title>Classifieds - Buy & Sell Used Products</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Classifieds - Buy & Sell Used Products</h1>
@@ -18,16 +20,28 @@
         </nav>
     </header>
 
+    <!-- Buy Section -->
     <section id="buy">
         <h2>Available Products</h2>
+        <!-- Category filter -->
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="books">Books</option>
+            <option value="clothing">Clothing</option>
+        </select>
+
         <div id="product-list">
-            <!-- Products will be rendered here by JavaScript -->
+            <!-- Products will be dynamically rendered by JavaScript -->
         </div>
     </section>
 
+    <!-- Sell Section -->
     <section id="sell">
         <h2>Sell Your Product</h2>
-        <form id="sell-form">
+        <form id="sell-form" enctype="multipart/form-data">
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" required>
 
@@ -37,10 +51,28 @@
             <label for="productDescription">Description:</label>
             <textarea id="productDescription" required></textarea>
 
+            <label for="productCategory">Category:</label>
+            <select id="productCategory" required>
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="books">Books</option>
+                <option value="clothing">Clothing</option>
+            </select>
+
+            <label for="productImage">Product Image:</label>
+            <input type="file" id="productImage" accept="image/*" required>
+
             <button type="submit">Add Product</button>
         </form>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Classifieds - All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
     <script src="app.js"></script>
 </body>
+
 </html>
