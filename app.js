@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Leather Jacket',
             price: 100,
             description: 'Stylish leather jacket, great condition.',
-            image: "C:\Users\IT_USER5\Pictures\v.jfif",
+            image: 'jacket.webp',
             category: 'clothing',
             seller: {
                 name: 'Bob Smith',
