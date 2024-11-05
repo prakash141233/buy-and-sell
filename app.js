@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Smartphone',
             price: 500,
             description: 'A brand new smartphone with all features.',
-            image: '"C:\Users\IT_USER5\Pictures\iphone 14.jpeg"',
+            image: 'iphone 14.jpeg',
             category: 'electronics',
             seller: {
                 name: 'Alice Johnson',
