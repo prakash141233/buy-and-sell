@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Iphone',
             price: 50000,
             description: 'A brand new smartphone with all features.',
-            image: 'images/iphone 14.jpeg', // Ensure this image path is correct
+            image: 'iphone 14.jpeg', // Ensure this image path is correct
             category: 'electronics',
             seller: {
                 name: 'Sudheesh',
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Leather Jacket',
             price: 10000,
             description: 'Stylish leather jacket, great condition.',
-            image: 'images/jacket.webp', // Ensure this image path is correct
+            image: 'jacket.webp', // Ensure this image path is correct
             category: 'clothing',
             seller: {
                 name: 'Akil',
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Royal Enfield',
             price: 150000, // Fixed price formatting (removed commas)
             description: 'A stylish and classic bike',
-            image: 'images/royal enfield.jpg', // Ensure this image path is correct
+            image: 'royal enfield.jpg', // Ensure this image path is correct
             category: 'bike',
             seller: {
                 name: 'Hari',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Book',
             price: 500,
             description: 'A Book full of stories',
-            image: 'images/jungke book.jfif', // Ensure this image path is correct
+            image: 'jungke book.jfif', // Ensure this image path is correct
             category: 'book',
             seller: {
                 name: 'Sriram',
