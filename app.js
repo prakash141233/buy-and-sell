@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Iphone',
             price: 50000,
             description: 'A brand new smartphone with all features.',
-            image: 'iphone 14.jpeg',
+            image: 'images/iphone 14.jpeg', // Ensure this image path is correct
             category: 'electronics',
             seller: {
                 name: 'Sudheesh',
@@ -20,29 +20,29 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Leather Jacket',
             price: 10000,
             description: 'Stylish leather jacket, great condition.',
-            image: 'jacket.webp',
+            image: 'images/jacket.webp', // Ensure this image path is correct
             category: 'clothing',
             seller: {
                 name: 'Akil',
                 phone: '98763537210'
             }
         },
-          {
-            name: 'Royal enfield',
-            price: 1,50,000,
+        {
+            name: 'Royal Enfield',
+            price: 150000, // Fixed price formatting (removed commas)
             description: 'A stylish and classic bike',
-            image: 'royal enfield.jpg',
+            image: 'images/royal enfield.jpg', // Ensure this image path is correct
             category: 'bike',
             seller: {
                 name: 'Hari',
                 phone: '9847467266'
             }
         },
-          {
+        {
             name: 'Book',
             price: 500,
-            description: 'A Book with full of story',
-            image: 'jungke book.jfif',
+            description: 'A Book full of stories',
+            image: 'images/jungke book.jfif', // Ensure this image path is correct
             category: 'book',
             seller: {
                 name: 'Sriram',
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedCategory = categoryFilter.value;
         productList.innerHTML = '';
 
-        const filteredProducts = selectedCategory === 'all' ?
+        const filteredProducts = selectedCategory === 'all' ? 
             products : products.filter(product => product.category === selectedCategory);
 
         filteredProducts.forEach((product, index) => {
@@ -86,18 +86,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const productCategory = document.getElementById('productCategory').value;
         const productImage = document.getElementById('productImage').files[0];
 
-        // Validate image file
-        if (!productImage) {
-            alert('Please upload an image for the product.');
+        // Validate form fields
+        if (!productName || !productPrice || !productDescription || !productCategory || !productImage) {
+            alert('Please fill out all fields and upload an image.');
             return;
         }
 
+        // Validate image file
         const imageUrl = URL.createObjectURL(productImage);  // Generate a URL for the image
 
         // Add the new product to the products array
         products.push({
             name: productName,
-            price: productPrice,
+            price: parseFloat(productPrice), // Ensure price is parsed as a number
             description: productDescription,
             category: productCategory,
             image: imageUrl, // Use the uploaded image URL
