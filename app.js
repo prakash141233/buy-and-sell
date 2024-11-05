@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Book',
             price: 500,
             description: 'A Book full of stories',
-            image: 'jungke book.jfif', // Ensure this image path is correct
+            image: 'jungle book.jfif', // Ensure this image path is correct
             category: 'book',
             seller: {
                 name: 'Sriram',
