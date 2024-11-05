@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'iphone 14.jpeg',
             category: 'electronics',
             seller: {
-                name: 'Alice Johnson',
-                phone: '123-456-7890'
+                name: 'Sudheesh',
+                phone: '64532992873'
             }
         },
         {
@@ -23,10 +23,21 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'jacket.webp',
             category: 'clothing',
             seller: {
-                name: 'Bob Smith',
-                phone: '987-654-3210'
+                name: 'Akil',
+                phone: '98763537210'
             }
         }
+          {
+            name: 'Royal enfield',
+            price: 1,50,000,
+            description: 'A stylish and classic bike',
+            image: 'royal enfield.jpg',
+            category: 'electronics',
+            seller: {
+                name: 'Hari',
+                phone: '9847467266'
+            }
+        },
     ];
 
     // Function to render products based on category filter
