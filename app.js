@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'Akil',
                 phone: '98763537210'
             }
-        }
+        },
           {
             name: 'Royal enfield',
             price: 1,50,000,
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'Sriram',
                 phone: '8536473828'
             }
-        },
+        }
     ];
 
     // Function to render products based on category filter
