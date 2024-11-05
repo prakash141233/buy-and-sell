@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             name: 'Book',
             price: 500,
-            description: 'A Book full of stories',
+            description: 'A Book full of war and revenge ',
             image: 'game of thrones.jpg', 
             category: 'book',
             seller: {
