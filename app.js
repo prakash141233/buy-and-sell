@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             price: 1,50,000,
             description: 'A stylish and classic bike',
             image: 'royal enfield.jpg',
-            category: 'Bike',
+            category: 'bike',
             seller: {
                 name: 'Hari',
                 phone: '9847467266'
