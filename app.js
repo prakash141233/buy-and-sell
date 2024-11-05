@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sample data of available products
     let products = [
         {
-            name: 'Smartphone',
-            price: 500,
+            name: 'Iphone',
+            price: 50000,
             description: 'A brand new smartphone with all features.',
             image: 'iphone 14.jpeg',
             category: 'electronics',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'Leather Jacket',
-            price: 100,
+            price: 10000,
             description: 'Stylish leather jacket, great condition.',
             image: 'jacket.webp',
             category: 'clothing',
@@ -32,10 +32,21 @@ document.addEventListener('DOMContentLoaded', function () {
             price: 1,50,000,
             description: 'A stylish and classic bike',
             image: 'royal enfield.jpg',
-            category: 'electronics',
+            category: 'Bike',
             seller: {
                 name: 'Hari',
                 phone: '9847467266'
+            }
+        },
+          {
+            name: 'Book',
+            price: 500,
+            description: 'A Book with full of story',
+            image: 'jungke book.jfif',
+            category: 'book',
+            seller: {
+                name: 'Sriram',
+                phone: '8536473828'
             }
         },
     ];
